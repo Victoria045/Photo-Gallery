@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
-# Create your views here.
+# views 
+def index(request):
+     
+    return render(request,'photos/index.html')
