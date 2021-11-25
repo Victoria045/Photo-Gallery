@@ -3,7 +3,6 @@
 ## Author 
 Built by: [Victoria Beryl](https://github.com/Victoria045)
 
-#
 ## Description
 Photo-Gallery is a Django application where as a user you are able to view different photos, expand the photo and also view the details of the photo based on the location taken.
 
