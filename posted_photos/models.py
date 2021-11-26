@@ -2,7 +2,6 @@ from django.db import models
 from django.utils import timezone
 import datetime as dt
 
-# Create your models here.
 class Category(models.Model):
     category_name = models.CharField(max_length = 60)
 
@@ -27,7 +26,7 @@ class Location(models.Model):
         return self.location_name
     
     @classmethod
-    def update_location(cls,id,value)
+    def update_location(cls,id,value):
         cls.objects.filter(id = id).update(image = value)
 
     def save_location(self):
@@ -43,8 +42,8 @@ class Image(models.Model):
     description = models.TextField()
     author = models.CharField(max_length = 40)
     date_posted = models.DateTimeField(default = timezone.now)
-    category = models.ForeignKey(Category)
-    location = models.ForeignKey(Location)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE,)
+    location = models.ForeignKey(Location,on_delete=models.CASCADE,)
 
     @classmethod
     def filter_by_location(cls, location):
@@ -62,7 +61,7 @@ class Image(models.Model):
     
     @classmethod
     def search_by_category(cls, category):
-        images = cls.objects.filter(category_name__icontains=category)
+        images = cls.objects.filter(name__icontains=category)
         return images
     
     def __str__(self):
