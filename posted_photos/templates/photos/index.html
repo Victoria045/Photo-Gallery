@@ -7,14 +7,13 @@
   <div class="container">   
           <div class="mr-0 mt-5 mb-2">
             <span id="locations">
-                {% for location in locations %}
+                {% for distinct in distincts %}
                     <a class="btn btn-outline-secondary text-dark btn-sm mt-3" id="btn"
-                        href="/location/{{location.location_name}}">{{location.location_name}}</a>
+                        href="/location/{{distinct.location_name}}">{{distinct.location_name}}</a>
                 {%endfor%}
             </span>
           </div>
       
-      <!-- <hr> -->
       <div class="card-columns">
           {% for image in images %}
           <div class="card" data-toggle="modal" data-target="#{{image.id}}">
@@ -33,7 +32,7 @@
                 </button>
                 </div>
                 <div class="modal-body text-center">
-                    <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid">
+                    <img src="{{image.image.url}}" style="width:22rem; height:12rem; object-fit:cover;" alt="{{image.name}}" class="img-fluid">
                     <p class="imgdesc text-center">{{image.description}}</p>
                     <span class="btn btn-sm btn-outline-success">{{image.category.category_name}}</span> <a
                         href="/location/{{image.location.location_name}}" class="btn btn-sm btn-outline-info">{{image.location.location_name}}</a>
