@@ -3,7 +3,7 @@ from .models import Category, Location, Image
 
 class CategoryTestClass(TestCase):
     def setUp(self):
-        self.category = Category(category_name='food')
+        self.category = Category(category_name='Food')
         self.category.save_category()
     
     def test_instance(self):
@@ -14,10 +14,16 @@ class CategoryTestClass(TestCase):
         categories = Category.objects.all()
         self.assertTrue(len(categories) > 0)
 
-    # def test_delete_category():
+    # def test_delete_category(self):
     #     self.category.delete_category()
-    #     category = Category.objects.assertTrue()
-    #     self.assertTrue(len(category) == 0)
+    #     category = Category.objects.assertEqual()
+    #     self.assertEqual(len(category) == 0)
+
+    # def test_delete_category(self):
+    #     category = self.category.delete_category()
+    #     get_category = Category.objects.get(category)
+    #     del_category = get_category.delete()
+    #     self.assertFalse(Category.objects.filter(pk=pk).exists())
 
 class TestLocation(TestCase):
     def setUp(self):
@@ -53,10 +59,10 @@ class TestImage(TestCase):
         self.location = Location(location_name = 'Rongai')
         self.location.save_location()
 
-        self.category = Category(category_name = 'food')
+        self.category = Category(category_name = 'Food')
         self.category.save_category()
 
-        self.image_test = Image(id=1, name='burger', description='grab the tastiest of burgers', 
+        self.image_test = Image(id=1, name='Burger', description='Grab the tastiest of burgers', 
                                location=self.location, category = self.category)
 
     def test_instance(self):
@@ -83,8 +89,8 @@ class TestImage(TestCase):
     #     image = Image.objects.filter(id=self.image_test.id)
     #     self.assertTrue(found_image, image)
 
-    # def test_search_image_by_location(self):
-    #     category = 'food'
+    # def test_search_image_by_category(self):
+    #     category = 'Food'
     #     found_image = self.image_test.search_by_category(category)
     #     self.assertTrue(len(found_image) > 1)
 
