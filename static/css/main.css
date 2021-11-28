@@ -1,14 +1,8 @@
-h2 {
-  color:white;
-  margin-top:2%;
-  font-size:35px;
-  }
-
-  .overlay{
+ .overlay{
   margin:0;
   padding:0;
-  /* background-color:rgba(49, 83, 15,0.3); */
   }
+
   .imagea{
   margin-top:34%;
   font-size:45px;
@@ -33,24 +27,10 @@ h2 {
   padding:3%;
   border:none;
   }
+
   h3{
   color:white;
   font-family: 'Special Elite', cursive;
-  }
-  #locations{
-  color:white;
-  font-family: 'Special Elite', cursive;
-  }
-  hr{
-  background:white;
-  height:2px;
-  }
-  #imageheader{
-  font-family: 'Yeseva One', cursive;
-  }
-  
-  .imgdesc{
-  font-family: 'Vollkorn', serif;
   }
 
   #found{
