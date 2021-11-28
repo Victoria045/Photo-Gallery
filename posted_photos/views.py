@@ -3,10 +3,17 @@ from .models import Location,Category,Image
 
 # views 
 def index(request):
-    images = Image.objects.all()
+    images = Image.objects.all() 
+
     locations = Location.get_locations()
-    print(locations)
-    return render(request,'photos/index.html',{'images':images[::-1],'locations':locations})
+    distincts = []
+    for location in locations:
+        distincts_ids = [x.location_name for x in distincts]
+        print(location.id in distincts_ids)
+        print(location.location_name, distincts_ids)
+        if location.location_name not in distincts_ids:
+            distincts.append(location)
+    return render(request,'photos/index.html',{'images':images[::-1],'distincts':distincts})
 
 def image_location(request,location):
     images = Image.filter_by_location(location)
