@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import django_heroku
 import dj_database_url
 from decouple import config,Csv
@@ -71,6 +74,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posted_photos',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -135,6 +139,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# adding config
+cloudinary.config( 
+  cloud_name = "dss64y5cs", 
+  api_key = "457573822868972", 
+  api_secret = "veBrtH1GvSnlmEe8nvoqxbe85T8" 
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
