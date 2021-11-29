@@ -3,14 +3,12 @@
 ## Author 
 Built by: [Victoria Beryl](https://github.com/Victoria045)
 
-## Description
+# Description
 Photo-Gallery is a Django application where as a user you are able to view different photos, expand the photo and also view the details of the photo based on the location taken.
 
 # User Story 
-## As a user:
 * Able to view different photos interesting me.
 * Click on a single photo to expand it and view the details of the photo.
-* Photo details appear on a modal within the same route as the main page.
 * Search for dfferent categories of photos. 
 * Copy a link to the photo to share.
 * View photos based on location taken.
@@ -21,26 +19,48 @@ Photo-Gallery is a Django application where as a user you are able to view diffe
 * pip
 * Django
 
-#### Cloning
+# Setup and Installation
+#### Cloning the repository
 * Open Terminal:
 
         $ git clone https://github.com/Victoria045/Photo-Gallery.git
         $ cd Photo-Gallery
         $ code . or atom . based on your text editor 
 
+* Navigate into the folder, install and activate virtual environment
+
+        $ sudo pip3 install virtualenv
+
+        $ virtualenv virtual
+
+        $ source virtual/bin/acivate
+
 * Install all dependencies in requirements.txt
 
-        $ pip install -r requirements.txt
+        (virtual)$ pip install -r requirements.txt
+
+#### Setup the Database
+* Setup the database username, password, host
+
+        (virtual)$ python manage.py makemigrations 
+        posted_photos
+
+* Run migrations
+
+       (virtual)$ python manage.py migrate
 
 ### Running the Application
 * To run the application, open the cloned repo in terminal and run the following commands:
 
-        $ python3 manage.py runserver
+        (virtual)$ python3 manage.py runserver
 
 ### Testing the Application       
 * To run unittests for the class application and check if it functions well:
 
-        $ python3 manage.py test photos
+        (virtual)$ python3 manage.py test posted_photos
+
+## Known Bugs
+* No known bugs so far, incase a bug is spotted pull requests are allowed.
 
 
 ## Technologies Used
