@@ -42,7 +42,7 @@ Photo-Gallery is a Django application where as a user you are able to view diffe
 #### Setup the Database
 * Setup the database username, password, host
 
-        (virtual)$ python manage.py makemigrations 
+       (virtual)$ python manage.py makemigrations 
         posted_photos
 
 * Run migrations
