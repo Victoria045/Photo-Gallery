@@ -14,40 +14,46 @@
             </span>
           </div>
       
-      <div class="card-columns">
+      <div class="row">
+        <!-- <div class="card-columns"> -->
           {% for image in images %}
-          <div class="card" data-toggle="modal" data-target="#{{image.id}}">
-            <img src="{{image.image.url}}" style="width:22rem; height:12rem; object-fit:cover;" alt="{{image.name}}" class="card-img">
+          <div class="col col-sm-2 col-md-4 col-lg-4 mb-3">
+            <div class="card" data-toggle="modal" data-target="#{{image.id}}">
+              <img src="{{image.image.url}}" style="width:22rem; height:12rem; object-fit:cover;" alt="{{image.name}}" class="card-img">
+            </div>
           </div>
+          
   
-        <!-- Modal -->
-        <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" 
-               aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">{{image.name}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body text-center">
-                    <img src="{{image.image.url}}" style="width:30rem; height:18rem; object-fit:cover;" alt="{{image.name}}" class="img-fluid">
-                    <p class="imgdesc text-center">{{image.description}}</p>
-                    <span class="btn btn-sm btn-outline-success">{{image.category.category_name}}</span> <a
-                        href="/location/{{image.location.location_name}}" class="btn btn-sm btn-outline-info">{{image.location.location_name}}</a>
-                </div>
+          <!-- Modal -->
+          <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" 
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">{{image.name}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                  </div>
+                  <div class="modal-body text-center">
+                      <img src="{{image.image.url}}" style="width:30rem; height:18rem; object-fit:cover;" alt="{{image.name}}" class="img-fluid">
+                      <p class="imgdesc text-center">{{image.description}}</p>
+                      <span class="btn btn-sm btn-outline-success">{{image.category.category_name}}</span> <a
+                          href="/location/{{image.location.location_name}}" class="btn btn-sm btn-outline-info">{{image.location.location_name}}</a>
+                  </div>
 
-                <div class="modal-footer">
-                <input class="form-control input-lg" type="text" value="{{image.image.url}}" id="{{image.id}}.url">
-                <button type="button" class="btn btn-primary" onclick="copyLink('{{image.id}}.url')">Copy</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-            </div>
-        </div>
+                  <div class="modal-footer">
+                  <input class="form-control input-lg" type="text" value="{{image.image.url}}" id="{{image.id}}.url">
+                  <button type="button" class="btn btn-primary" onclick="copyLink('{{image.id}}.url')">Copy</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+              </div>
+          </div>
           {% endfor %}
+      <!-- </div> -->
       </div>
+      
   </div>
 </div>
 
