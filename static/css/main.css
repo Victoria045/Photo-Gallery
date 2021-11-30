@@ -6,7 +6,10 @@
   .ca-hi {
     overflow: hidden;
   }
-  
+  .col {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
   .imagea{
   margin-top:34%;
   font-size:45px;
