@@ -14,16 +14,11 @@ class CategoryTestClass(TestCase):
         categories = Category.objects.all()
         self.assertTrue(len(categories) > 0)
 
-    # def test_delete_category(self):
-    #     self.category.delete_category()
-    #     category = Category.objects.assertEqual()
-    #     self.assertEqual(len(category) == 0)
-
-    # def test_delete_category(self):
-    #     category = self.category.delete_category()
-    #     get_category = Category.objects.get(category)
-    #     del_category = get_category.delete()
-    #     self.assertFalse(Category.objects.filter(pk=pk).exists())
+    def test_delete_category(self):
+        self.category.save_category()
+        self.category.delete_category()
+        categories = Category.objects.all()
+        self.assertTrue(len(categories)==0)
 
 class TestLocation(TestCase):
     def setUp(self):
@@ -38,16 +33,12 @@ class TestLocation(TestCase):
         locations = Location.get_locations()
         self.assertTrue(len(locations) > 0)
 
-    # def test_get_locations(self):
-    #     self.location.save_location()
-    #     locations = Location.get_locations()
-    #     self.assertTrue(len(locations) > 1)
-    
-    # def test_update_location(self):
-    #     new_location = 'Langata'
-    #     self.location.update_location(self.location.id, new_location)
-    #     changed_location = Location.objecs.filter(location_name = 'Langata')
-    #     self.assertTrue(len(changed_location) > 0)
+    def test_get_locations(self):
+        self.location.save_location()
+        self.location1 = Location(location_name='Rongai')
+        self.location1.save()
+        locations = Location.get_locations()
+        self.assertTrue(len(locations) > 1)
     
     def test_delete_location(self):
         self.location.delete_location()
@@ -83,16 +74,11 @@ class TestImage(TestCase):
         self.image_test.update_image(self.image_test.id, 'images/image1.jpg')
         changed_image = Image.objects.filter(image='images/image1.jpg')
         self.assertTrue(len(changed_image) > 0)
-    
-    # def test_get_image_by_id(self):
-    #     found_image = self.image_test.get_image_by_id(self.image_test.id)
-    #     image = Image.objects.filter(id=self.image_test.id)
-    #     self.assertTrue(found_image, image)
-
-    # def test_search_image_by_category(self):
-    #     category = 'Food'
-    #     found_image = self.image_test.search_by_category(category)
-    #     self.assertTrue(len(found_image) > 1)
+   
+    def test_search_by_category(self):
+        category = 'Food'
+        found_image = self.image_test.search_by_category(category)
+        self.assertFalse(len(found_image) > 1)
 
     def tearDown(self):
         Image.objects.all().delete()
