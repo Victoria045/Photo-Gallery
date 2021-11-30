@@ -3,6 +3,10 @@
   padding:0;
   }
 
+  .ca-hi {
+    overflow: hidden;
+  }
+  
   .imagea{
   margin-top:34%;
   font-size:45px;
