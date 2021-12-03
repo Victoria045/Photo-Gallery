@@ -141,9 +141,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # adding config
 cloudinary.config( 
-  cloud_name = "dss64y5cs", 
-  api_key = "457573822868972", 
-  api_secret = "veBrtH1GvSnlmEe8nvoqxbe85T8" 
+  cloud_name = config('cloud_name'), 
+  api_key = config('api_key'), 
+  api_secret = config('api_secret') 
 )
 
 # Internationalization
